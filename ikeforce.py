@@ -16,7 +16,9 @@ import vid
 from optparse import OptionParser
 from termios import tcflush, TCIOFLUSH
 import itertools
+import warnings
 
+warnings.filterwarnings("ignore")
 usageString = "Usage: %prog [target] [mode] -w /path-to/wordlist.txt [optional] -t 5 1 1 2\nExample: %prog 192.168.1.110 -e -w groupnames.txt"
 parser = OptionParser(usage=usageString)
 parser.add_option("-w","--wordlist",dest="wordlist",default=None,type="string",help="Path to wordlist file")
@@ -3612,4 +3614,3 @@ if __name__ == '__main__':
 		pass
 	print "Shutting down server\n\n"
 	t.join(6)
-
